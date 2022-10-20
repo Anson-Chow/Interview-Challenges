@@ -9,8 +9,32 @@
  * palindrome('frontend') === false
  */
 
+
+// SIMPLEST SOLUTION
+// const palindrome = (str) => {
+//   const reversedString = str.split("").reverse().join("");
+//   return str === reversedString;
+// };
+
+
+// INEFFICIENT SOLUTION (worth mentioning)
+// const palindrome = (str) => {
+//   return str.split("").every((char, index) => (
+//     char === str[str.length - 1 - index]
+//   ))
+// };
+
+
+// TOP TECH SOLUTION
 const palindrome = (str) => {
-  
-};
+    const middle = Math.floor(str.length / 2);
+    for (let i = 0; i < middle; ++i) {
+      const oppositeIndex = str.length - 1 - i;
+      if (str[i] !== str[oppositeIndex]) {
+        return false;
+      }
+    }
+    return true;
+  };
 
 module.exports = palindrome;
