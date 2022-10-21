@@ -16,8 +16,43 @@
  * ]) === 'ABC, abc, CBA'
  */
 
+// TOP TECH SOLUTION
 const stringifyId = (arr) => {
-
-};
-
-module.exports = stringifyId;
+    const idArray = arr.map(obj => obj.id);
+  
+    const uniqueIdArray = [...new Set(idArray)];
+  
+    return uniqueIdArray.join(", ");
+  };
+  
+  // BRUTE FORCE SOLUTION
+  const stringifyId2 = (arr) => {
+    const idArray = arr.map(obj => obj.id);
+    const uniqueArray = [];
+    let idString = "";
+  
+    for (let id of idArray) {
+      if (!uniqueArray.includes(id)) {
+        uniqueArray.push(id);
+      }
+    }
+  
+    for (let i = 0; i < uniqueArray.length; ++i) {
+      if (i !== uniqueArray.length - 1) {
+        idString += `${uniqueArray[i]}, `;
+      }
+      else {
+        idString += uniqueArray[i];
+      }
+    }
+  
+    return idString;
+  
+    // for (let id of uniqueArray) {
+    //   idString += `${id}, `;
+    // }
+  
+    // return idString.slice(0, idString.length - 2);
+  };
+  
+  module.exports = stringifyId;
