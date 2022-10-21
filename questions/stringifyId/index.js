@@ -31,7 +31,7 @@ const stringifyId = (arr) => {
     const uniqueArray = [];
     let idString = "";
   
-    for (let id of idArray) {
+    for (let id of idArray) { //for every ID in idArray
       if (!uniqueArray.includes(id)) {
         uniqueArray.push(id);
       }
