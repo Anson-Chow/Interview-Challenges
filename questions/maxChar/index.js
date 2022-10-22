@@ -7,6 +7,8 @@
  */
 
 const maxCharacter = (str) => {
+
+// BEGINNER SOLUTION
   //   const charMap = {}
   //   let max = 0;
   //   let maxChar = "";
@@ -24,6 +26,7 @@ const maxCharacter = (str) => {
   //   return maxChar
   // };
 
+//   MAP METHOD PRACTICE
   // const str = "Simplified !"
   // const charMap = new Map();
 
@@ -36,6 +39,7 @@ const maxCharacter = (str) => {
   //     console.log(char, count)
   // }
 
+//   TOP TECH SOLUTION
   const charMap = new Map();
   let max = 0;
   let maxChar = "";
